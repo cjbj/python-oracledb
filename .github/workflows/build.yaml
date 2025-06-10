@@ -15,7 +15,7 @@ jobs:
 
   build_source_package:
     name: Build source package
-    if: ${{ inputs.tgt == '' }} || contains(inputs.tgt, 'Source')
+    if: contains(inputs.tgt, 'Source') || inputs.tgt == ''
     runs-on: ubuntu-latest
     steps:
 
@@ -91,7 +91,7 @@ jobs:
 
   build_macos_wheels:
     name: Build wheels for ${{ matrix.os }} Python-${{ matrix.python-version}}-${{ matrix.arch }}
-    if: ${{ inputs.tgt == '' }} || contains(inputs.tgt, 'macOS')
+    if: contains(inputs.tgt, 'macOS') || inputs.tgt == ''
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -128,7 +128,7 @@ jobs:
 
   build_windows_wheels:
     name: Build wheels for ${{ matrix.os }} Python-${{ matrix.python-version}}-${{ matrix.arch }}
-    if: ${{ inputs.tgt == '' }} || contains(inputs.tgt, 'Windows')
+    if: contains(inputs.tgt, 'Windows') || inputs.tgt == ''
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
