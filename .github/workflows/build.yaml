@@ -20,7 +20,6 @@ jobs:
   build_source_package:
     name: Build source package
     runs-on: ubuntu-latest
-    if: contains( ${{env.tgt}}, 'Source')
     steps:
 
       - uses: actions/checkout@v4
@@ -47,7 +46,8 @@ jobs:
   build_linux_wheels:
     name: Build wheels for Linux
     runs-on: ${{ matrix.os }}
-    if: false  # This condition ensures the job is never executed
+    if: contains( ${{env.tgt}}, 'Linux')
+    #if: false  # This condition ensures the job is never executed
     strategy:
       matrix:
         include:
