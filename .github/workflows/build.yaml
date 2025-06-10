@@ -19,6 +19,7 @@ jobs:
 
   build_source_package:
     name: Build source package
+    if: contains(inputs.tgt, 'Source')
     runs-on: ubuntu-latest
     steps:
 
@@ -45,7 +46,7 @@ jobs:
 
   build_linux_wheels:
     name: Build wheels for Linux
-    if: false  # This condition ensures the job is never executed
+    if: contains(inputs.tgt, 'Linux')
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
@@ -94,7 +95,6 @@ jobs:
 
   build_macos_wheels:
     name: Build wheels for ${{ matrix.os }} Python-${{ matrix.python-version}}-${{ matrix.arch }}
-    #if: false  # This condition ensures the job is never executed
     if: contains(inputs.tgt, 'macOS')
     runs-on: ${{ matrix.os }}
     strategy:
@@ -132,7 +132,7 @@ jobs:
 
   build_windows_wheels:
     name: Build wheels for ${{ matrix.os }} Python-${{ matrix.python-version}}-${{ matrix.arch }}
-    if: false  # This condition ensures the job is never executed
+    if: contains(inputs.tgt, 'Windows')
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
