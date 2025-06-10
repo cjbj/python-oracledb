@@ -17,10 +17,6 @@ env:
 
 jobs:
 
-  prepare:
-    inputs:
-      tgt: ${{ github.event.inputs.tgt || env.tgt }}
-    
   build_source_package:
     name: Build source package
     runs-on: ubuntu-latest
