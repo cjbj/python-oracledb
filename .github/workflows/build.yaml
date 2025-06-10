@@ -165,6 +165,7 @@ jobs:
 
   combine_artifacts:
     name: Combine artifacts into single artifact
+    if: ${{ always() }}
     needs: [build_source_package, build_linux_wheels, build_macos_wheels, build_windows_wheels]
     runs-on: ubuntu-latest
 
