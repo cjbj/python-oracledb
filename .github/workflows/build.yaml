@@ -129,7 +129,7 @@ jobs:
 
   combine_artifacts:
     name: Combine artifacts into single artifact
-    needs: ${{ github.event.inputs.tgt || env.tgt }}
+    needs: ${{ tgt || env.tgt }}
     runs-on: ubuntu-latest
 
     steps:
