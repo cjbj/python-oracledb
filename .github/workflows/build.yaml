@@ -19,7 +19,7 @@ jobs:
 
   build_source_package:
     name: Build source package
-    if: contains(env.tgt, 'Source')
+    if: contains( ${{env.tgt}}, 'Source')
     runs-on: ubuntu-latest
     steps:
 
