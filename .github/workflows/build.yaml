@@ -17,11 +17,12 @@ env:
 
 jobs:
 
+  inputs:
+    tgt: ${{ github.event.inputs.tgt || env.tgt }}
+    
   build_source_package:
     name: Build source package
     runs-on: ubuntu-latest
-    inputs:
-      tgt: ${{ github.event.inputs.tgt || env.tgt }}
     steps:
 
       - uses: actions/checkout@v4
