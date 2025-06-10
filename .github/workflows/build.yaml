@@ -15,7 +15,7 @@ jobs:
 
   build_source_package:
     name: Build source package
-    if: contains(inputs.tgt, 'Source')
+    if: ${{ inputs.tgt == '' }} || contains(inputs.tgt, 'Source')
     runs-on: ubuntu-latest
     steps:
 
@@ -42,7 +42,7 @@ jobs:
 
   build_linux_wheels:
     name: Build wheels for Linux
-    if: ${{ inputs.tgt == '' }} || contains(inputs.tgt, 'Linux')
+    if: contains(inputs.tgt, 'Linux')
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
