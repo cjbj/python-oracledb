@@ -15,7 +15,7 @@ jobs:
 
   build_source_package:
     name: Build source package
-    if: ${{ inputs.tgt == '' }} || contains(inputs.tgt, 'Source')
+    if: contains(inputs.tgt, 'Source')
     runs-on: ubuntu-latest
     steps:
 
