@@ -11,10 +11,6 @@ on:
         default: 'Linux, macOS, Windows, Source'
         required: false
 
-# Default values for the builds triggered by the push event
-env:
-  tgt: 'Linux, macOS, Windows, Source'
-
 jobs:
 
   build_source_package:
