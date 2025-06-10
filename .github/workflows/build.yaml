@@ -17,8 +17,9 @@ env:
 
 jobs:
 
-  inputs:
-    tgt: ${{ github.event.inputs.tgt || env.tgt }}
+  prepare:
+    inputs:
+      tgt: ${{ github.event.inputs.tgt || env.tgt }}
     
   build_source_package:
     name: Build source package
