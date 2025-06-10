@@ -46,7 +46,7 @@ jobs:
 
   build_linux_wheels:
     name: Build wheels for Linux
-    if: contains(env.tgt, 'Linux') || contains(inputs.tgt, 'Linux')
+    if: ${{inputs.tgt == ''}} || contains(inputs.tgt, 'Linux')
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
