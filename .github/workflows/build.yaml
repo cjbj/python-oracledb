@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
     inputs:
       tgt:
-        description: Packages to build
+        description: List of packages to build
         default: 'Linux, macOS, Windows, Source'
         required: false
 
@@ -129,7 +129,7 @@ jobs:
 
   combine_artifacts:
     name: Combine artifacts into single artifact
-    needs: ${{ tgt || env.tgt }}
+    needs: ${{ env.tgt }}
     runs-on: ubuntu-latest
 
     steps:
