@@ -6,14 +6,14 @@ on:
       - v*
   workflow_dispatch:
     inputs:
-	build_targets:
+	tgt:
 	  description: List of platforms to build
 	  default: 'Linux, macOS, Windows, Source'
 	  required: false
 
 # Default values for the builds triggered by the push event
 env:
-  build_targets: 'Linux, macOS, Windows, Source'
+  tgt: 'Linux, macOS, Windows, Source'
 
 jobs:
 
@@ -129,7 +129,7 @@ jobs:
 
   combine_artifacts:
     name: Combine artifacts into single artifact
-    needs: build_targets
+    needs: tgt
     runs-on: ubuntu-latest
 
     steps:
