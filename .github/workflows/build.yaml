@@ -3,7 +3,7 @@ name: build
 on:
   push:
     tags:
-      - v*
+      - cj*
   workflow_dispatch:
     inputs:
       tgt:
