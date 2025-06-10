@@ -7,9 +7,9 @@ on:
   workflow_dispatch:
     inputs:
       tgt:
-	description: List of platforms to build
-	default: 'Linux, macOS, Windows, Source'
-	required: false
+        description: List of platforms to build
+        default: 'Linux, macOS, Windows, Source'
+        required: false
 
 # Default values for the builds triggered by the push event
 env:
