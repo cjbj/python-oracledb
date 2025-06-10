@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
     inputs:
       tgt:
-        description: List of platforms to build
+        description: Packages to build
         default: 'Linux, macOS, Windows, Source'
         required: false
 
@@ -129,7 +129,7 @@ jobs:
 
   combine_artifacts:
     name: Combine artifacts into single artifact
-    needs: ${{ github.event.inputs.tgt || env.tgt }
+    needs: ${{ github.event.inputs.tgt || env.tgt }}
     runs-on: ubuntu-latest
 
     steps:
