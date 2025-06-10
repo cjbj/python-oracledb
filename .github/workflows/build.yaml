@@ -46,8 +46,7 @@ jobs:
   build_linux_wheels:
     name: Build wheels for Linux
     runs-on: ${{ matrix.os }}
-    if: contains( ${{env.tgt}}, 'Linux')
-    #if: false  # This condition ensures the job is never executed
+    if: false  # This condition ensures the job is never executed
     strategy:
       matrix:
         include:
