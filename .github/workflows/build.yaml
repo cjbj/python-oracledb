@@ -3,7 +3,7 @@ name: Build python-oracledb packages
 on:
   push:
     tags:
-      - cj*
+      - v*
   workflow_dispatch:
     inputs:
       tgt:
