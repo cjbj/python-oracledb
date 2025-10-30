@@ -21,7 +21,9 @@ jobs:
 
     steps:
       - name: Check out python-oracledb repository code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v5
+        with:
+          submodules: true
 
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v3
