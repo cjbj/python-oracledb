@@ -40,6 +40,7 @@ jobs:
           pip install -e .
 
       - name: Create test schema
+        run: |
           python -m pytest tests/create_schema.py
         env:
           PYO_TEST_MAIN_USER: pythontest
