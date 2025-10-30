@@ -1,5 +1,12 @@
-name: python-oracledb-tests-adapter
-on: push
+name: python-oracledb-tests
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'src'
+      - '.github/workflows/python-oracledb-tests.yaml'
+  workflow_dispatch:
 
 jobs:
   dpy_oracle_adapter_tests:
@@ -39,7 +46,7 @@ jobs:
         run: |
           echo "OIC_DIR=$(echo /opt/oracle/instantclient*)" >> $GITHUB_ENV
 
-      - name: Install testing dependencies
+      - name: Install test dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -e ".[test]"
