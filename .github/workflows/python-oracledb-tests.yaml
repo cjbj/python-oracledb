@@ -33,6 +33,10 @@ jobs:
           chmod +x ${{ github.workspace }}/.github/scripts/install_oracle_instantclient.sh
           ${{ github.workspace }}/.github/scripts/install_oracle_instantclient.sh
 
+      - name: Get Instant Client directory
+        run: |
+          echo "OIC_DIR=$(echo /opt/oracle/instantclient*)" >> $GITHUB_ENV
+
       - name: Install testing dependencies
         run: |
           python -m pip install --upgrade pip
@@ -68,3 +72,4 @@ jobs:
           PYO_TEST_EXTERNAL_USER: pythontestexternal
           PYO_TEST_EDITION_NAME: pythoneditions
           PYO_TEST_PLUGINS:
+          LD_LIBRARY_PATH: $OIC_DIR
