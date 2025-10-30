@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - main
+      - cicdtest
     paths:
       - 'src'
       - '.github/workflows/python-oracledb-tests.yaml'
