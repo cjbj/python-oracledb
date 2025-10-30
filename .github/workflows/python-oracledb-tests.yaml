@@ -59,7 +59,7 @@ jobs:
           PYO_TEST_MAIN_PASSWORD: ${{ secrets.DPY_ORACLE_PASSWORD }}
           PYO_TEST_PROXY_USER: pythontestproxy
           PYO_TEST_PROXY_PASSWORD: ${{ secrets.DPY_ORACLE_PASSWORD }}
-          PYO_TEST_CONNECT_STRING: localhost/orclpdb1
+          PYO_TEST_CONNECT_STRING: localhost/freepdb1
           PYO_TEST_ADMIN_USER: system
           PYO_TEST_ADMIN_PASSWORD: ${{ secrets.DPY_ORACLE_PASSWORD }}
           PYO_TEST_EXTERNAL_USER: pythontestexternal
@@ -74,7 +74,7 @@ jobs:
           PYO_TEST_MAIN_PASSWORD: ${{ secrets.DPY_ORACLE_PASSWORD }}
           PYO_TEST_PROXY_USER: pythontestproxy
           PYO_TEST_PROXY_PASSWORD: ${{ secrets.DPY_ORACLE_PASSWORD }}
-          PYO_TEST_CONNECT_STRING: localhost/orclpdb1
+          PYO_TEST_CONNECT_STRING: localhost/freepdb1
           PYO_TEST_ADMIN_USER: system
           PYO_TEST_ADMIN_PASSWORD: ${{ secrets.DPY_ORACLE_PASSWORD }}
           PYO_TEST_EXTERNAL_USER: pythontestexternal
