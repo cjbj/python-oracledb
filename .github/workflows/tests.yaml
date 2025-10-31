@@ -1,4 +1,4 @@
-name: Run python-oracledb-tests
+name: Run python-oracledb tests
 on:
   push:
     branches:
