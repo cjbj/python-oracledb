@@ -1,5 +1,7 @@
 name: Run python-oracledb tests
+
 on:
+
   push:
     branches:
       - main
@@ -13,6 +15,7 @@ on:
   workflow_dispatch:
 
 jobs:
+
   dpy_tests:
     runs-on: ${{ matrix.os }}
     strategy:
