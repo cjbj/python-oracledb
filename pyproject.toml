@@ -60,7 +60,7 @@ test = [
     "pandas",
     "pyarrow",
     "pytest",
-    "tox"
+    "tox",
 ]
 oci_config = ["oci"]
 oci_auth = ["oci"]
