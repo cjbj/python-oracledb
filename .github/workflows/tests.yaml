@@ -82,4 +82,4 @@ jobs:
           PYO_TEST_ADMIN_PASSWORD: ${{ secrets.DPY_ORACLE_PASSWORD }}
           PYO_TEST_EXTERNAL_USER: pythontestexternal
           PYO_TEST_EDITION_NAME: pythoneditions
-          LD_LIBRARY_PATH: $OIC_DIR
+          LD_LIBRARY_PATH: ${{OIC_DIR}}
