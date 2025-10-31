@@ -11,7 +11,7 @@ on:
       - 'tests'
       - 'tox.ini'
       - 'pyproject.toml'
-      - '.github/workflows/python-oracledb-tests.yaml'
+      - '.github/workflows/tests.yaml'
   workflow_dispatch:
 
 jobs:
