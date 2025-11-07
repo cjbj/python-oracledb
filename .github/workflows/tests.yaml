@@ -49,6 +49,8 @@ jobs:
           ${{ github.workspace }}/.github/scripts/install_oracle_instantclient.sh
 
       - name: Get Instant Client directory
+        env:
+          LD_LIBRARY_PATH: ${{ env.LD_LIBRARY_PATH }}:$(echo /opt/oracle/instantclient*)
         run: |
           echo "OIC_DIR=$(echo /opt/oracle/instantclient*)" >> $GITHUB_ENV
 
@@ -60,9 +62,9 @@ jobs:
       - name: Run tests
         run: |
           python -m pytest tests/create_schema.py
-          python -m pytest --use-thick-mode
-          python -m pytest tests/create_schema.py
           python -m pytest
+          python -m pytest tests/create_schema.py
+          python -m pytest --use-thick-mode
 
         env:
           PYO_TEST_MAIN_USER: pythontest
