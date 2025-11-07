@@ -60,9 +60,9 @@ jobs:
       - name: Run tests
         run: |
           python -m pytest tests/create_schema.py
-          python -m pytest
-          python -m pytest tests/create_schema.py
           python -m pytest --use-thick-mode
+          python -m pytest tests/create_schema.py
+          python -m pytest
 
         env:
           PYO_TEST_MAIN_USER: pythontest
