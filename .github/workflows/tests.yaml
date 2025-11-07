@@ -47,11 +47,6 @@ jobs:
         run: |
           chmod +x ${{ github.workspace }}/.github/scripts/install_oracle_instantclient.sh
           ${{ github.workspace }}/.github/scripts/install_oracle_instantclient.sh
-
-      - name: Get Instant Client directory
-        env:
-          LD_LIBRARY_PATH: ${{ env.LD_LIBRARY_PATH }}:$(echo /opt/oracle/instantclient*)
-        run: |
           echo "OIC_DIR=$(echo /opt/oracle/instantclient*)" >> $GITHUB_ENV
 
       - name: Install test dependencies
